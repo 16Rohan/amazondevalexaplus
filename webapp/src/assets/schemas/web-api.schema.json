@@ -1,0 +1,450 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://homecare-concierge.example/schemas/web-api.schema.json",
+  "title": "HomeCare Concierge Web API",
+  "description": "Contracts for frontend-to-web-backend requests and canonical response objects. This is not the MCP tool schema or the LLM output schema.",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/SendMessageRequest"
+    },
+    {
+      "$ref": "#/$defs/SendMessageResponse"
+    }
+  ],
+  "$defs": {
+    "Identifier": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "Timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "SendMessageRequest": {
+      "title": "SendMessageRequest",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "conversation_id",
+        "client_message_id",
+        "content"
+      ],
+      "properties": {
+        "conversation_id": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "client_message_id": {
+          "$ref": "#/$defs/Identifier",
+          "description": "Client-generated idempotency key for this submitted message."
+        },
+        "content": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 20000
+        },
+        "metadata": {
+          "type": "object",
+          "description": "Optional non-sensitive transport/UI metadata. Do not put secrets or raw private payloads here.",
+          "additionalProperties": {
+            "type": [
+              "string",
+              "number",
+              "boolean",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "SendMessageResponse": {
+      "title": "SendMessageResponse",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "conversation_id",
+        "response_id",
+        "status",
+        "user_message",
+        "assistant_message"
+      ],
+      "properties": {
+        "conversation_id": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "response_id": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "status": {
+          "$ref": "#/$defs/ResponseStatus"
+        },
+        "user_message": {
+          "$ref": "#/$defs/UserMessage"
+        },
+        "assistant_message": {
+          "$ref": "#/$defs/AssistantMessage"
+        }
+      }
+    },
+    "ResponseStatus": {
+      "type": "string",
+      "enum": [
+        "queued",
+        "in_progress",
+        "completed",
+        "failed",
+        "cancelled"
+      ]
+    },
+    "UserMessage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "message_id",
+        "role",
+        "content",
+        "created_at"
+      ],
+      "properties": {
+        "message_id": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "role": {
+          "const": "user"
+        },
+        "content": {
+          "type": "string"
+        },
+        "created_at": {
+          "$ref": "#/$defs/Timestamp"
+        }
+      }
+    },
+    "AssistantMessage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "message_id",
+        "role",
+        "content",
+        "created_at",
+        "activity",
+        "tool_results",
+        "structured_result",
+        "conclusion"
+      ],
+      "properties": {
+        "message_id": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "role": {
+          "const": "assistant"
+        },
+        "content": {
+          "type": "string",
+          "description": "User-facing response text. Never private chain-of-thought."
+        },
+        "created_at": {
+          "$ref": "#/$defs/Timestamp"
+        },
+        "updated_at": {
+          "$ref": "#/$defs/Timestamp"
+        },
+        "activity": {
+          "$ref": "#/$defs/ActivitySummary"
+        },
+        "tool_results": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ToolResult"
+          }
+        },
+        "structured_result": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/StructuredResult"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "conclusion": {
+          "$ref": "#/$defs/Conclusion"
+        }
+      }
+    },
+    "ActivitySummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "summary",
+        "events"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "pending",
+            "running",
+            "completed",
+            "partial_failure",
+            "failed"
+          ]
+        },
+        "summary": {
+          "type": "string"
+        },
+        "events": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ActivityEvent"
+          }
+        }
+      }
+    },
+    "ActivityEvent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "activity_id",
+        "sequence",
+        "label",
+        "status"
+      ],
+      "properties": {
+        "activity_id": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "sequence": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "pending",
+            "running",
+            "succeeded",
+            "failed",
+            "unavailable"
+          ]
+        },
+        "result_summary": {
+          "type": "string"
+        },
+        "started_at": {
+          "$ref": "#/$defs/Timestamp"
+        },
+        "finished_at": {
+          "$ref": "#/$defs/Timestamp"
+        }
+      }
+    },
+    "ToolResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tool_result_id",
+        "activity_id",
+        "tool_name",
+        "status",
+        "summary",
+        "result",
+        "provenance"
+      ],
+      "properties": {
+        "tool_result_id": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "activity_id": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "tool_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "succeeded",
+            "failed",
+            "unavailable"
+          ]
+        },
+        "summary": {
+          "type": "string"
+        },
+        "result": {
+          "type": [
+            "object",
+            "array",
+            "string",
+            "number",
+            "boolean",
+            "null"
+          ],
+          "description": "Sanitized, frontend-safe result; never expose raw internal tool payloads by default."
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "error": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/SafeError"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "SafeError": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "message",
+        "retryable"
+      ],
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string",
+          "description": "Safe user-facing error message."
+        },
+        "retryable": {
+          "type": "boolean"
+        }
+      }
+    },
+    "Provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_type",
+        "is_simulated"
+      ],
+      "properties": {
+        "source_type": {
+          "type": "string"
+        },
+        "is_simulated": {
+          "type": "boolean"
+        },
+        "source_label": {
+          "type": "string"
+        },
+        "retrieved_at": {
+          "$ref": "#/$defs/Timestamp"
+        },
+        "reference_uri": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "StructuredResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "result_id",
+        "type",
+        "status",
+        "display",
+        "payload",
+        "provenance"
+      ],
+      "properties": {
+        "result_id": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "type": {
+          "type": "string",
+          "description": "Stable domain result type, e.g. appliance_identification, troubleshooting, warranty, service_options, service_request, case_status."
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "available",
+            "partial",
+            "unavailable",
+            "requires_confirmation",
+            "failed"
+          ]
+        },
+        "display": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "title",
+            "summary"
+          ],
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "summary": {
+              "type": "string"
+            },
+            "disclaimer": {
+              "type": "string"
+            }
+          }
+        },
+        "payload": {
+          "type": [
+            "object",
+            "array",
+            "string",
+            "number",
+            "boolean",
+            "null"
+          ],
+          "description": "Typed by the result type registry. Keep this schema generic until domain payload schemas are defined."
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        }
+      }
+    },
+    "Conclusion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "completed",
+            "needs_user_input",
+            "requires_confirmation",
+            "escalated",
+            "partially_completed",
+            "unable_to_complete"
+          ]
+        },
+        "summary": {
+          "type": "string"
+        },
+        "next_action": {
+          "type": "string"
+        },
+        "requires_user_confirmation": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

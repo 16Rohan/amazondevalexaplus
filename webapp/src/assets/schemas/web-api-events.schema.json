@@ -1,0 +1,654 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://homecare-concierge.example/schemas/web-api-events.schema.json",
+  "title": "HomeCare Concierge Web API Streaming Events",
+  "description": "Event envelopes for incremental updates to one assistant response. Each event is transport state, not a separate chat message.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "event_id",
+    "event",
+    "conversation_id",
+    "response_id",
+    "sequence",
+    "occurred_at",
+    "data"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "event": {
+      "type": "string",
+      "enum": [
+        "message.accepted",
+        "response.started",
+        "activity.started",
+        "activity.updated",
+        "tool_result.available",
+        "structured_result.updated",
+        "message.updated",
+        "response.completed",
+        "response.failed",
+        "response.cancelled"
+      ]
+    },
+    "conversation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "response_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Monotonically increasing within one response. Clients deduplicate by event_id and detect gaps by sequence."
+    },
+    "occurred_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "data": {
+      "type": "object"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "event": {
+            "const": "message.accepted"
+          }
+        },
+        "required": [
+          "event"
+        ]
+      },
+      "then": {
+        "properties": {
+          "data": {
+            "$ref": "#/$defs/MessageAcceptedData"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event": {
+            "const": "response.started"
+          }
+        },
+        "required": [
+          "event"
+        ]
+      },
+      "then": {
+        "properties": {
+          "data": {
+            "$ref": "#/$defs/ResponseStartedData"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event": {
+            "const": "activity.started"
+          }
+        },
+        "required": [
+          "event"
+        ]
+      },
+      "then": {
+        "properties": {
+          "data": {
+            "$ref": "#/$defs/ActivityStartedData"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event": {
+            "const": "activity.updated"
+          }
+        },
+        "required": [
+          "event"
+        ]
+      },
+      "then": {
+        "properties": {
+          "data": {
+            "$ref": "#/$defs/ActivityUpdatedData"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event": {
+            "const": "tool_result.available"
+          }
+        },
+        "required": [
+          "event"
+        ]
+      },
+      "then": {
+        "properties": {
+          "data": {
+            "$ref": "#/$defs/ToolResultAvailableData"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event": {
+            "const": "structured_result.updated"
+          }
+        },
+        "required": [
+          "event"
+        ]
+      },
+      "then": {
+        "properties": {
+          "data": {
+            "$ref": "#/$defs/StructuredResultUpdatedData"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event": {
+            "const": "message.updated"
+          }
+        },
+        "required": [
+          "event"
+        ]
+      },
+      "then": {
+        "properties": {
+          "data": {
+            "$ref": "#/$defs/MessageUpdatedData"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event": {
+            "const": "response.completed"
+          }
+        },
+        "required": [
+          "event"
+        ]
+      },
+      "then": {
+        "properties": {
+          "data": {
+            "$ref": "#/$defs/ResponseCompletedData"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event": {
+            "const": "response.failed"
+          }
+        },
+        "required": [
+          "event"
+        ]
+      },
+      "then": {
+        "properties": {
+          "data": {
+            "$ref": "#/$defs/ResponseFailedData"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event": {
+            "const": "response.cancelled"
+          }
+        },
+        "required": [
+          "event"
+        ]
+      },
+      "then": {
+        "properties": {
+          "data": {
+            "$ref": "#/$defs/ResponseCancelledData"
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "MessageAcceptedData": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "user_message_id"
+      ],
+      "properties": {
+        "user_message_id": {
+          "type": "string"
+        }
+      }
+    },
+    "ResponseStartedData": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "assistant_message_id",
+        "status"
+      ],
+      "properties": {
+        "assistant_message_id": {
+          "type": "string"
+        },
+        "status": {
+          "const": "in_progress"
+        }
+      }
+    },
+    "ActivityStartedData": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "activity_id",
+        "label",
+        "status"
+      ],
+      "properties": {
+        "activity_id": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "status": {
+          "const": "running"
+        }
+      }
+    },
+    "ActivityUpdatedData": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "activity_id",
+        "label",
+        "status"
+      ],
+      "properties": {
+        "activity_id": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "pending",
+            "running",
+            "succeeded",
+            "failed",
+            "unavailable"
+          ]
+        },
+        "result_summary": {
+          "type": "string"
+        },
+        "safe_error": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "code": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            },
+            "retryable": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "code",
+            "message",
+            "retryable"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    "ToolResultAvailableData": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tool_result"
+      ],
+      "properties": {
+        "tool_result": {
+          "$ref": "#/$defs/ToolResult"
+        }
+      }
+    },
+    "ToolResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tool_result_id",
+        "activity_id",
+        "tool_name",
+        "status",
+        "summary",
+        "result",
+        "provenance"
+      ],
+      "properties": {
+        "tool_result_id": {
+          "type": "string"
+        },
+        "activity_id": {
+          "type": "string"
+        },
+        "tool_name": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "succeeded",
+            "failed",
+            "unavailable"
+          ]
+        },
+        "summary": {
+          "type": "string"
+        },
+        "result": {
+          "type": [
+            "object",
+            "array",
+            "string",
+            "number",
+            "boolean",
+            "null"
+          ]
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "error": {
+          "type": [
+            "object",
+            "null"
+          ]
+        }
+      }
+    },
+    "Provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_type",
+        "is_simulated"
+      ],
+      "properties": {
+        "source_type": {
+          "type": "string"
+        },
+        "is_simulated": {
+          "type": "boolean"
+        },
+        "source_label": {
+          "type": "string"
+        },
+        "retrieved_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "reference_uri": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "StructuredResultUpdatedData": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "structured_result"
+      ],
+      "properties": {
+        "structured_result": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "result_id",
+            "type",
+            "status",
+            "display",
+            "payload",
+            "provenance"
+          ],
+          "properties": {
+            "result_id": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string",
+              "enum": [
+                "available",
+                "partial",
+                "unavailable",
+                "requires_confirmation",
+                "failed"
+              ]
+            },
+            "display": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "title",
+                "summary"
+              ],
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "summary": {
+                  "type": "string"
+                },
+                "disclaimer": {
+                  "type": "string"
+                }
+              }
+            },
+            "payload": {
+              "type": [
+                "object",
+                "array",
+                "string",
+                "number",
+                "boolean",
+                "null"
+              ]
+            },
+            "provenance": {
+              "$ref": "#/$defs/Provenance"
+            }
+          }
+        }
+      }
+    },
+    "MessageUpdatedData": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "message_id",
+        "content",
+        "content_mode"
+      ],
+      "properties": {
+        "message_id": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string",
+          "description": "User-facing assistant text, never private chain-of-thought."
+        },
+        "content_mode": {
+          "type": "string",
+          "enum": [
+            "replace",
+            "append_delta"
+          ],
+          "description": "Use replace for the initial contract; append_delta is permitted only if client and server explicitly implement delta semantics."
+        }
+      }
+    },
+    "ResponseCompletedData": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "assistant_message_id",
+        "status",
+        "activity_status",
+        "conclusion"
+      ],
+      "properties": {
+        "assistant_message_id": {
+          "type": "string"
+        },
+        "status": {
+          "const": "completed"
+        },
+        "activity_status": {
+          "type": "string",
+          "enum": [
+            "completed",
+            "partial_failure",
+            "failed"
+          ]
+        },
+        "conclusion": {
+          "$ref": "#/$defs/Conclusion"
+        }
+      }
+    },
+    "ResponseFailedData": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "assistant_message_id",
+        "status",
+        "error"
+      ],
+      "properties": {
+        "assistant_message_id": {
+          "type": "string"
+        },
+        "status": {
+          "const": "failed"
+        },
+        "error": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "code",
+            "message",
+            "retryable"
+          ],
+          "properties": {
+            "code": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            },
+            "retryable": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "ResponseCancelledData": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "assistant_message_id",
+        "status"
+      ],
+      "properties": {
+        "assistant_message_id": {
+          "type": "string"
+        },
+        "status": {
+          "const": "cancelled"
+        }
+      }
+    },
+    "Conclusion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "completed",
+            "needs_user_input",
+            "requires_confirmation",
+            "escalated",
+            "partially_completed",
+            "unable_to_complete"
+          ]
+        },
+        "summary": {
+          "type": "string"
+        },
+        "next_action": {
+          "type": "string"
+        },
+        "requires_user_confirmation": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

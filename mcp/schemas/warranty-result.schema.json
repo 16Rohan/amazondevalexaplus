@@ -1,0 +1,55 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://homecare-concierge.example/schemas/warranty-result.schema.json",
+	"title": "Warranty Result",
+	"description": "Structured output for checking an appliance's warranty eligibility.",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"appliance_id": {
+			"type": "string",
+			"minLength": 1
+		},
+		"status": {
+			"type": "string",
+			"enum": ["eligible", "ineligible", "unknown"]
+		},
+		"coverage_end_date": {
+			"type": ["string", "null"],
+			"format": "date",
+			"description": "Known coverage end date, or null when unavailable."
+		},
+		"evidence_summary": {
+			"type": "string"
+		},
+		"provenance": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"source_type": {
+					"type": "string",
+					"enum": [
+						"verified_provider_record",
+						"user_provided",
+						"simulated_record"
+					]
+				},
+				"is_simulated": {
+					"type": "boolean"
+				},
+				"retrieved_at": {
+					"type": ["string", "null"],
+					"format": "date-time"
+				}
+			},
+			"required": ["source_type", "is_simulated", "retrieved_at"]
+		}
+	},
+	"required": [
+		"appliance_id",
+		"status",
+		"coverage_end_date",
+		"evidence_summary",
+		"provenance"
+	]
+}

@@ -2,7 +2,7 @@ function App(){
   return (
     <div>
       <h1>
-        Amazon Developer Hackathon
+        LLM Response
       </h1>
     </div>
   )

@@ -22,3 +22,437 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+
+
+# ==========================================
+# Python bytecode and compiled files
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyd
+*.so
+*.dll
+*.dylib
+*.egg
+*.egg-info/
+*.whl
+*.py,cover
+.python-version.bak
+
+# ==========================================
+# Python caches and temporary files
+# ==========================================
+.python_cache/
+.pycache/
+.pytest_cache/
+.mypy_cache/
+.dmypy.json
+.pyre/
+.pytype/
+.ruff_cache/
+.pyright/
+.pyrightcache/
+.pyre_configuration.local
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+.cache/
+cache/
+temp/
+tmp/
+.tmp/
+temporary/
+.temp/
+*.tmp
+*.temp
+*.bak
+*.backup
+*.old
+*.orig
+*.swp
+*.swo
+*.swn
+*~
+*.stackdump
+
+# ==========================================
+# Virtual environments
+# ==========================================
+.venv/
+venv/
+env/
+ENV/
+virtualenv/
+.virtualenv/
+venv.bak/
+env.bak/
+.python-env/
+pip-wheel-metadata/
+share/python-wheels/
+pyvenv.cfg
+__pypackages__/
+
+# ==========================================
+# Package and build artifacts
+# ==========================================
+build/
+dist/
+target/
+out/
+.eggs/
+wheels/
+wheelhouse/
+pip-wheel-metadata/
+sdist/
+*.egg-info/
+MANIFEST
+*.manifest
+*.spec
+site/
+docs/_build/
+*.whl
+
+# ==========================================
+# Dependency and package manager caches
+# ==========================================
+.pip-cache/
+pip-cache/
+pip-log.txt
+pip-delete-this-directory.txt
+.pdm-build/
+.pdm-python
+.pdm-cache/
+.poetry/
+.poetry-cache/
+.uv-cache/
+.ruff_cache/
+.hatch/
+.hatch_build/
+.maturin/
+.pybuilder/
+.pybuilder_cache/
+.pants.d/
+.bazel-cache/
+__pypackages__/
+
+# ==========================================
+# Testing and coverage reports
+# ==========================================
+.pytest_cache/
+.tox/
+.nox/
+coverage/
+coverage.xml
+nosetests.xml
+junit.xml
+test-results/
+test-reports/
+reports/
+pytestdebug.log
+test.log
+*.cover
+*.py,cover
+.hypothesis/
+hypothesis/
+benchmark-results/
+*.prof
+*.lprof
+profile/
+prof/
+.prof
+.profraw
+.profdata
+
+# ==========================================
+# Logs and runtime output
+# ==========================================
+logs/
+log/
+*.log
+*.log.*
+*.out
+*.err
+*.pid
+*.seed
+*.pid.lock
+nohup.out
+debug.log
+error.log
+access.log
+trace.log
+runtime.log
+crash.log
+core
+core.*
+*.core
+
+# ==========================================
+# Environment variables and local secrets
+# ==========================================
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+.envrc.local
+secrets/
+.secret/
+.secrets/
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+credentials.json
+service-account.json
+client_secret*.json
+
+# ==========================================
+# Jupyter Notebook and IPython
+# ==========================================
+.ipynb_checkpoints/
+.profile/
+.ipython/
+ipython_config.py
+.ipython_history
+jupyter_runtime/
+.runtime/
+*.nbconvert.ipynb
+
+# ==========================================
+# IDEs and code editors
+# ==========================================
+.idea/
+.vscode/
+*.code-workspace
+.spyderproject
+.spyproject/
+.ropeproject/
+.pydevproject
+.project
+.settings/
+.history/
+.fleet/
+.zed/
+.cursor/
+.windsurf/
+*.sublime-workspace
+*.sublime-project
+.vim/
+.nvim/
+.tags
+.tags1
+.tags2
+TAGS
+cscope.out
+
+# ==========================================
+# Operating system clutter
+# ==========================================
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100/
+.Trashes/
+.fseventsd/
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+desktop.ini
+$RECYCLE.BIN/
+*.lnk
+Icon?
+.DocumentRevisions-V100/
+.VolumeIcon.icns
+
+# ==========================================
+# Database files and local data
+# ==========================================
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+*.sqlite-journal
+*.mdb
+*.accdb
+*.duckdb
+*.parquet
+*.feather
+*.pkl
+*.pickle
+*.joblib
+*.rdb
+dump.rdb
+data/tmp/
+data/temp/
+data/cache/
+datasets/cache/
+artifacts/
+artifacts/tmp/
+checkpoints/
+snapshots/
+*.checkpoint
+*.ckpt
+*.model
+*.weights
+
+# ==========================================
+# Generated documentation and API output
+# ==========================================
+docs/_build/
+_build/
+site/
+.sphinx-build/
+sphinx_output/
+pdoc_output/
+api_docs/
+generated_docs/
+.openapi-generator/
+swagger-output/
+redoc-static.html
+
+# ==========================================
+# Task runners and automation
+# ==========================================
+.celerybeat-schedule
+celerybeat-schedule
+celerybeat.pid
+*.schedule
+.airflow/
+.prefect/
+.dagster/
+.metaflow/
+.mlflow/
+wandb/
+.neptune/
+.tensorboard/
+runs/
+lightning_logs/
+ray_results/
+tune_results/
+
+# ==========================================
+# Machine learning and AI artifacts
+# ==========================================
+model_cache/
+models/cache/
+huggingface_cache/
+transformers_cache/
+torch_cache/
+.triton/
+torch_extensions/
+*.onnx
+*.tflite
+*.pb
+*.h5
+*.hdf5
+*.safetensors
+*.pt
+*.pth
+*.bin
+*.gguf
+*.ggml
+*.engine
+*.plan
+*.npy
+*.npz
+*.mat
+*.tfrecord
+*.tfrecords
+*.index
+*.data-*
+*.meta
+*.events.out.tfevents.*
+
+# ==========================================
+# Web frameworks and local runtime files
+# ==========================================
+instance/
+staticfiles/
+media/uploads/
+uploads/tmp/
+uploads/temp/
+celerybeat-schedule
+*.sock
+*.socket
+*.sqlite3-journal
+
+# ==========================================
+# Docker and container development
+# ==========================================
+.docker/
+.docker-cache/
+docker-data/
+docker-volumes/
+
+# ==========================================
+# Cloud SDKs and infrastructure caches
+# ==========================================
+.terraform/
+.terragrunt-cache/
+.serverless/
+.aws-sam/
+.azure/
+.gcloud/
+.kube/cache/
+.minikube/
+.pulumi/
+.cdk.out/
+.venv/
+
+# ==========================================
+# Frontend artifacts in Python projects
+# ==========================================
+node_modules/
+.npm/
+.pnpm-store/
+.yarn/cache/
+.parcel-cache/
+.turbo/
+.next/
+.nuxt/
+.svelte-kit/
+.angular/
+coverage-final.json
+
+# ==========================================
+# Miscellaneous generated clutter
+# ==========================================
+*.swp
+*.swo
+*.temp
+*.tmp
+*.cache
+*.cache.*
+*.dump
+*.bak
+*.backup
+*.orig
+*.rej
+*.patch~
+*.generated
+*.gen.py
+generated/
+_generated/
+auto_generated/
+.autogenerated/
+.tempdata/
+.work/
+.workspace/
+.staging/
+.staging-*/
+scratch/
+scratchpad/
+sandbox_tmp/
+test_output/
+output/
+outputs/tmp/
+
