@@ -1,0 +1,940 @@
+{
+  "records": [
+    {
+      "appliance_id": "demo-appl-washer-001",
+      "eligibility": "eligible",
+      "coverage_end_date": "2027-02-13",
+      "reason": "Simulated manufacturer warranty active through 2027-02-13.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "demo-appl-fridge-001",
+      "eligibility": "eligible",
+      "coverage_end_date": "2028-10-18",
+      "reason": "Simulated manufacturer warranty active through 2028-10-18.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appliance-001",
+      "eligibility": "eligible",
+      "coverage_end_date": "2027-12-31",
+      "reason": "Simulated manufacturer warranty active through 2027-12-31.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "demo-appl-unknown-001",
+      "eligibility": "unknown",
+      "coverage_end_date": null,
+      "reason": "Warranty terms unverified; proof of purchase required.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-refrig-001",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2024-03-03",
+      "reason": "Simulated manufacturer warranty expired on 2024-03-03.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-refrig-002",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2026-04-04",
+      "reason": "Simulated manufacturer warranty expired on 2026-04-04.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-refrig-003",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2026-05-05",
+      "reason": "Simulated manufacturer warranty expired on 2026-05-05.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-refrig-004",
+      "eligibility": "eligible",
+      "coverage_end_date": "2027-06-06",
+      "reason": "Simulated manufacturer warranty active through 2027-06-06.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-refrig-005",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2023-07-07",
+      "reason": "Simulated manufacturer warranty expired on 2023-07-07.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-refrig-006",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2023-08-08",
+      "reason": "Simulated manufacturer warranty expired on 2023-08-08.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-refrig-007",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2024-09-09",
+      "reason": "Simulated manufacturer warranty expired on 2024-09-09.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-refrig-008",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2026-10-10",
+      "reason": "Simulated manufacturer warranty expired on 2026-10-10.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-refrig-009",
+      "eligibility": "eligible",
+      "coverage_end_date": "2026-11-11",
+      "reason": "Simulated manufacturer warranty active through 2026-11-11.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-refrig-010",
+      "eligibility": "eligible",
+      "coverage_end_date": "2027-12-12",
+      "reason": "Simulated manufacturer warranty active through 2027-12-12.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-refrig-011",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2023-01-13",
+      "reason": "Simulated manufacturer warranty expired on 2023-01-13.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-refrig-012",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2023-02-14",
+      "reason": "Simulated manufacturer warranty expired on 2023-02-14.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-washin-013",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2024-03-15",
+      "reason": "Simulated manufacturer warranty expired on 2024-03-15.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-washin-014",
+      "eligibility": "unknown",
+      "coverage_end_date": null,
+      "reason": "Warranty terms unverified; proof of purchase required.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-washin-015",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2026-05-17",
+      "reason": "Simulated manufacturer warranty expired on 2026-05-17.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-washin-016",
+      "eligibility": "eligible",
+      "coverage_end_date": "2027-06-18",
+      "reason": "Simulated manufacturer warranty active through 2027-06-18.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-washin-017",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2023-07-19",
+      "reason": "Simulated manufacturer warranty expired on 2023-07-19.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-washin-018",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2023-08-20",
+      "reason": "Simulated manufacturer warranty expired on 2023-08-20.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-washin-019",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2024-09-21",
+      "reason": "Simulated manufacturer warranty expired on 2024-09-21.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-washin-020",
+      "eligibility": "eligible",
+      "coverage_end_date": "2026-10-22",
+      "reason": "Simulated manufacturer warranty active through 2026-10-22.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-washin-021",
+      "eligibility": "eligible",
+      "coverage_end_date": "2026-11-23",
+      "reason": "Simulated manufacturer warranty active through 2026-11-23.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-washin-022",
+      "eligibility": "eligible",
+      "coverage_end_date": "2027-12-24",
+      "reason": "Simulated manufacturer warranty active through 2027-12-24.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-washin-023",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2023-01-25",
+      "reason": "Simulated manufacturer warranty expired on 2023-01-25.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-dryer-024",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2023-02-26",
+      "reason": "Simulated manufacturer warranty expired on 2023-02-26.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-dryer-025",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2024-03-27",
+      "reason": "Simulated manufacturer warranty expired on 2024-03-27.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-dryer-026",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2026-04-28",
+      "reason": "Simulated manufacturer warranty expired on 2026-04-28.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-dryer-027",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2026-05-01",
+      "reason": "Simulated manufacturer warranty expired on 2026-05-01.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-dryer-028",
+      "eligibility": "eligible",
+      "coverage_end_date": "2027-06-02",
+      "reason": "Simulated manufacturer warranty active through 2027-06-02.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-dryer-029",
+      "eligibility": "unknown",
+      "coverage_end_date": null,
+      "reason": "Warranty terms unverified; proof of purchase required.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-dryer-030",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2023-08-04",
+      "reason": "Simulated manufacturer warranty expired on 2023-08-04.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-dryer-031",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2024-09-05",
+      "reason": "Simulated manufacturer warranty expired on 2024-09-05.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-dryer-032",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2026-10-06",
+      "reason": "Simulated manufacturer warranty expired on 2026-10-06.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-dryer-033",
+      "eligibility": "eligible",
+      "coverage_end_date": "2026-11-07",
+      "reason": "Simulated manufacturer warranty active through 2026-11-07.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-dishwa-034",
+      "eligibility": "eligible",
+      "coverage_end_date": "2027-12-08",
+      "reason": "Simulated manufacturer warranty active through 2027-12-08.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-dishwa-035",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2023-01-09",
+      "reason": "Simulated manufacturer warranty expired on 2023-01-09.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-dishwa-036",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2023-02-10",
+      "reason": "Simulated manufacturer warranty expired on 2023-02-10.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-dishwa-037",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2024-03-11",
+      "reason": "Simulated manufacturer warranty expired on 2024-03-11.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-dishwa-038",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2026-04-12",
+      "reason": "Simulated manufacturer warranty expired on 2026-04-12.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-dishwa-039",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2026-05-13",
+      "reason": "Simulated manufacturer warranty expired on 2026-05-13.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-dishwa-040",
+      "eligibility": "eligible",
+      "coverage_end_date": "2027-06-14",
+      "reason": "Simulated manufacturer warranty active through 2027-06-14.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-dishwa-041",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2023-07-15",
+      "reason": "Simulated manufacturer warranty expired on 2023-07-15.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-dishwa-042",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2023-08-16",
+      "reason": "Simulated manufacturer warranty expired on 2023-08-16.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-dishwa-043",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2024-09-17",
+      "reason": "Simulated manufacturer warranty expired on 2024-09-17.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-air_co-044",
+      "eligibility": "unknown",
+      "coverage_end_date": null,
+      "reason": "Warranty terms unverified; proof of purchase required.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-air_co-045",
+      "eligibility": "eligible",
+      "coverage_end_date": "2026-11-19",
+      "reason": "Simulated manufacturer warranty active through 2026-11-19.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-air_co-046",
+      "eligibility": "eligible",
+      "coverage_end_date": "2027-12-20",
+      "reason": "Simulated manufacturer warranty active through 2027-12-20.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-air_co-047",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2023-01-21",
+      "reason": "Simulated manufacturer warranty expired on 2023-01-21.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-air_co-048",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2023-02-22",
+      "reason": "Simulated manufacturer warranty expired on 2023-02-22.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-air_co-049",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2024-03-23",
+      "reason": "Simulated manufacturer warranty expired on 2024-03-23.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-air_co-050",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2026-04-24",
+      "reason": "Simulated manufacturer warranty expired on 2026-04-24.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-air_co-051",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2026-05-25",
+      "reason": "Simulated manufacturer warranty expired on 2026-05-25.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-air_co-052",
+      "eligibility": "eligible",
+      "coverage_end_date": "2027-06-26",
+      "reason": "Simulated manufacturer warranty active through 2027-06-26.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-air_co-053",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2023-07-27",
+      "reason": "Simulated manufacturer warranty expired on 2023-07-27.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-microw-054",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2023-08-28",
+      "reason": "Simulated manufacturer warranty expired on 2023-08-28.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-microw-055",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2024-09-01",
+      "reason": "Simulated manufacturer warranty expired on 2024-09-01.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-microw-056",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2026-10-02",
+      "reason": "Simulated manufacturer warranty expired on 2026-10-02.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-microw-057",
+      "eligibility": "eligible",
+      "coverage_end_date": "2026-11-03",
+      "reason": "Simulated manufacturer warranty active through 2026-11-03.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-microw-058",
+      "eligibility": "eligible",
+      "coverage_end_date": "2027-12-04",
+      "reason": "Simulated manufacturer warranty active through 2027-12-04.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-microw-059",
+      "eligibility": "unknown",
+      "coverage_end_date": null,
+      "reason": "Warranty terms unverified; proof of purchase required.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-microw-060",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2023-02-06",
+      "reason": "Simulated manufacturer warranty expired on 2023-02-06.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-microw-061",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2024-03-07",
+      "reason": "Simulated manufacturer warranty expired on 2024-03-07.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-microw-062",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2026-04-08",
+      "reason": "Simulated manufacturer warranty expired on 2026-04-08.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-microw-063",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2026-05-09",
+      "reason": "Simulated manufacturer warranty expired on 2026-05-09.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-oven-064",
+      "eligibility": "eligible",
+      "coverage_end_date": "2027-06-10",
+      "reason": "Simulated manufacturer warranty active through 2027-06-10.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-oven-065",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2023-07-11",
+      "reason": "Simulated manufacturer warranty expired on 2023-07-11.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-oven-066",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2023-08-12",
+      "reason": "Simulated manufacturer warranty expired on 2023-08-12.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-oven-067",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2024-09-13",
+      "reason": "Simulated manufacturer warranty expired on 2024-09-13.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-oven-068",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2026-10-14",
+      "reason": "Simulated manufacturer warranty expired on 2026-10-14.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-oven-069",
+      "eligibility": "eligible",
+      "coverage_end_date": "2026-11-15",
+      "reason": "Simulated manufacturer warranty active through 2026-11-15.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-oven-070",
+      "eligibility": "eligible",
+      "coverage_end_date": "2027-12-16",
+      "reason": "Simulated manufacturer warranty active through 2027-12-16.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-oven-071",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2023-01-17",
+      "reason": "Simulated manufacturer warranty expired on 2023-01-17.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-oven-072",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2023-02-18",
+      "reason": "Simulated manufacturer warranty expired on 2023-02-18.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-oven-073",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2024-03-19",
+      "reason": "Simulated manufacturer warranty expired on 2024-03-19.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-water_-074",
+      "eligibility": "unknown",
+      "coverage_end_date": null,
+      "reason": "Warranty terms unverified; proof of purchase required.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-water_-075",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2026-05-21",
+      "reason": "Simulated manufacturer warranty expired on 2026-05-21.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-water_-076",
+      "eligibility": "eligible",
+      "coverage_end_date": "2027-06-22",
+      "reason": "Simulated manufacturer warranty active through 2027-06-22.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-water_-077",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2023-07-23",
+      "reason": "Simulated manufacturer warranty expired on 2023-07-23.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-water_-078",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2023-08-24",
+      "reason": "Simulated manufacturer warranty expired on 2023-08-24.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-water_-079",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2024-09-25",
+      "reason": "Simulated manufacturer warranty expired on 2024-09-25.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-water_-080",
+      "eligibility": "eligible",
+      "coverage_end_date": "2026-10-26",
+      "reason": "Simulated manufacturer warranty active through 2026-10-26.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-water_-081",
+      "eligibility": "eligible",
+      "coverage_end_date": "2026-11-27",
+      "reason": "Simulated manufacturer warranty active through 2026-11-27.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-water_-082",
+      "eligibility": "eligible",
+      "coverage_end_date": "2027-12-28",
+      "reason": "Simulated manufacturer warranty active through 2027-12-28.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-water_-083",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2023-01-01",
+      "reason": "Simulated manufacturer warranty expired on 2023-01-01.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-vacuum-084",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2023-02-02",
+      "reason": "Simulated manufacturer warranty expired on 2023-02-02.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-vacuum-085",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2024-03-03",
+      "reason": "Simulated manufacturer warranty expired on 2024-03-03.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-vacuum-086",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2026-04-04",
+      "reason": "Simulated manufacturer warranty expired on 2026-04-04.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-vacuum-087",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2026-05-05",
+      "reason": "Simulated manufacturer warranty expired on 2026-05-05.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-vacuum-088",
+      "eligibility": "eligible",
+      "coverage_end_date": "2027-06-06",
+      "reason": "Simulated manufacturer warranty active through 2027-06-06.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-vacuum-089",
+      "eligibility": "unknown",
+      "coverage_end_date": null,
+      "reason": "Warranty terms unverified; proof of purchase required.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-vacuum-090",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2023-08-08",
+      "reason": "Simulated manufacturer warranty expired on 2023-08-08.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-vacuum-091",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2024-09-09",
+      "reason": "Simulated manufacturer warranty expired on 2024-09-09.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-vacuum-092",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2026-10-10",
+      "reason": "Simulated manufacturer warranty expired on 2026-10-10.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-vacuum-093",
+      "eligibility": "eligible",
+      "coverage_end_date": "2026-11-11",
+      "reason": "Simulated manufacturer warranty active through 2026-11-11.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-water_-094",
+      "eligibility": "eligible",
+      "coverage_end_date": "2027-12-12",
+      "reason": "Simulated manufacturer warranty active through 2027-12-12.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-water_-095",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2023-01-13",
+      "reason": "Simulated manufacturer warranty expired on 2023-01-13.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-water_-096",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2023-02-14",
+      "reason": "Simulated manufacturer warranty expired on 2023-02-14.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-water_-097",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2024-03-15",
+      "reason": "Simulated manufacturer warranty expired on 2024-03-15.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-water_-098",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2026-04-16",
+      "reason": "Simulated manufacturer warranty expired on 2026-04-16.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-water_-099",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2026-05-17",
+      "reason": "Simulated manufacturer warranty expired on 2026-05-17.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-water_-100",
+      "eligibility": "eligible",
+      "coverage_end_date": "2027-06-18",
+      "reason": "Simulated manufacturer warranty active through 2027-06-18.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-water_-101",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2023-07-19",
+      "reason": "Simulated manufacturer warranty expired on 2023-07-19.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-water_-102",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2023-08-20",
+      "reason": "Simulated manufacturer warranty expired on 2023-08-20.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-water_-103",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2024-09-21",
+      "reason": "Simulated manufacturer warranty expired on 2024-09-21.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-televi-104",
+      "eligibility": "eligible",
+      "coverage_end_date": "2026-10-22",
+      "reason": "Simulated manufacturer warranty active through 2026-10-22.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-televi-105",
+      "eligibility": "eligible",
+      "coverage_end_date": "2026-11-23",
+      "reason": "Simulated manufacturer warranty active through 2026-11-23.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-televi-106",
+      "eligibility": "eligible",
+      "coverage_end_date": "2027-12-24",
+      "reason": "Simulated manufacturer warranty active through 2027-12-24.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-televi-107",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2023-01-25",
+      "reason": "Simulated manufacturer warranty expired on 2023-01-25.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-televi-108",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2023-02-26",
+      "reason": "Simulated manufacturer warranty expired on 2023-02-26.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-televi-109",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2024-03-27",
+      "reason": "Simulated manufacturer warranty expired on 2024-03-27.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-televi-110",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2026-04-28",
+      "reason": "Simulated manufacturer warranty expired on 2026-04-28.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-televi-111",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2026-05-01",
+      "reason": "Simulated manufacturer warranty expired on 2026-05-01.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-televi-112",
+      "eligibility": "eligible",
+      "coverage_end_date": "2027-06-02",
+      "reason": "Simulated manufacturer warranty active through 2027-06-02.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    },
+    {
+      "appliance_id": "appl-televi-113",
+      "eligibility": "ineligible",
+      "coverage_end_date": "2023-07-03",
+      "reason": "Simulated manufacturer warranty expired on 2023-07-03.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    }
+  ]
+}

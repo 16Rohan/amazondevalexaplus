@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://homecare-concierge.example/schemas/web-api.schema.json",
-  "title": "HomeCare Concierge Web API",
+  "title": "Alexa Web API",
   "description": "Contracts for frontend-to-web-backend requests and canonical response objects. This is not the MCP tool schema or the LLM output schema.",
   "oneOf": [
     {
@@ -9,6 +9,18 @@
     },
     {
       "$ref": "#/$defs/SendMessageResponse"
+    },
+    {
+      "$ref": "#/$defs/HealthSnapshot"
+    },
+    {
+      "$ref": "#/$defs/ConversationHistory"
+    },
+    {
+      "$ref": "#/$defs/ConversationList"
+    },
+    {
+      "$ref": "#/$defs/CreateConversationResponse"
     }
   ],
   "$defs": {
@@ -17,9 +29,97 @@
       "minLength": 1,
       "maxLength": 200
     },
+    "PersistenceGuarantee": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "survives_backend_restart"],
+      "properties": {
+        "type": {"const": "process_memory"},
+        "survives_backend_restart": {"const": false}
+      }
+    },
+    "ConversationSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["conversation_id", "created_at", "updated_at", "response_count"],
+      "properties": {
+        "conversation_id": {"$ref": "#/$defs/Identifier"},
+        "created_at": {"$ref": "#/$defs/Timestamp"},
+        "updated_at": {"$ref": "#/$defs/Timestamp"},
+        "response_count": {"type": "integer", "minimum": 0}
+      }
+    },
+    "ConversationList": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["conversations", "persistence"],
+      "properties": {
+        "conversations": {"type": "array", "items": {"$ref": "#/$defs/ConversationSummary"}},
+        "persistence": {"$ref": "#/$defs/PersistenceGuarantee"}
+      }
+    },
+    "CreateConversationResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["conversation_id", "created_at", "persistence"],
+      "properties": {
+        "conversation_id": {"$ref": "#/$defs/Identifier"},
+        "created_at": {"$ref": "#/$defs/Timestamp"},
+        "persistence": {"$ref": "#/$defs/PersistenceGuarantee"}
+      }
+    },
+    "ConversationHistory": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["conversation_id", "created_at", "updated_at", "responses", "persistence"],
+      "properties": {
+        "conversation_id": {"$ref": "#/$defs/Identifier"},
+        "created_at": {"$ref": "#/$defs/Timestamp"},
+        "updated_at": {"$ref": "#/$defs/Timestamp"},
+        "responses": {"type": "array", "items": {"$ref": "#/$defs/SendMessageResponse"}},
+        "persistence": {"$ref": "#/$defs/PersistenceGuarantee"}
+      }
+    },
     "Timestamp": {
       "type": "string",
       "format": "date-time"
+    },
+    "HealthSnapshot": {
+      "title": "HealthSnapshot",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["overall_status", "mode", "checked_at", "services"],
+      "properties": {
+        "overall_status": {"$ref": "#/$defs/HealthStatus"},
+        "mode": {"type": "string", "enum": ["live", "degraded", "demo"]},
+        "checked_at": {"$ref": "#/$defs/Timestamp"},
+        "services": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["web_backend", "llm_connectivity", "llm_inference", "mcp_connectivity", "mcp_discovery"],
+          "properties": {
+            "web_backend": {"$ref": "#/$defs/HealthService"},
+            "llm_connectivity": {"$ref": "#/$defs/HealthService"},
+            "llm_inference": {"$ref": "#/$defs/HealthService"},
+            "mcp_connectivity": {"$ref": "#/$defs/HealthService"},
+            "mcp_discovery": {"$ref": "#/$defs/HealthService"}
+          }
+        }
+      }
+    },
+    "HealthStatus": {
+      "type": "string",
+      "enum": ["healthy", "degraded", "unavailable", "not_checked"]
+    },
+    "HealthService": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "summary", "checked_at"],
+      "properties": {
+        "status": {"$ref": "#/$defs/HealthStatus"},
+        "summary": {"type": "string"},
+        "checked_at": {"$ref": "#/$defs/Timestamp"}
+      }
     },
     "SendMessageRequest": {
       "title": "SendMessageRequest",
@@ -128,6 +228,7 @@
         "role",
         "content",
         "created_at",
+        "provenance",
         "activity",
         "tool_results",
         "structured_result",
@@ -149,6 +250,10 @@
         },
         "updated_at": {
           "$ref": "#/$defs/Timestamp"
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance",
+          "description": "Identifies the source of assistant text separately from domain-data provenance on tool results."
         },
         "activity": {
           "$ref": "#/$defs/ActivitySummary"
@@ -340,6 +445,10 @@
         },
         "is_simulated": {
           "type": "boolean"
+        },
+        "execution_type": {
+          "type": "string",
+          "enum": ["mcp_streamable_http"]
         },
         "source_label": {
           "type": "string"

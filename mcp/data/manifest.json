@@ -1,0 +1,10 @@
+{
+  "version": "2.0.0",
+  "updated_at": "2026-10-22T21:00:00Z",
+  "record_counts": {
+    "appliances": 117,
+    "warranty": 117
+  },
+  "provenance": "synthetic_demo_dataset",
+  "assistant_name": "Alexa"
+}

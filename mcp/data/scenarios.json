@@ -1,0 +1,65 @@
+{
+  "scenarios": [
+    {
+      "scenario_id": "washing_machine_error",
+      "title": "Washing machine error",
+      "prompt": "My washing machine shows error code E21. What does it mean, and what safe next step should I take?",
+      "mcp_tools": [
+        "get_troubleshooting_steps"
+      ],
+      "expected_domain_status": "documentation_not_found",
+      "expected_behavior": "Do not infer the meaning of E21 without an exact model/source; give safe guidance and ask for the model."
+    },
+    {
+      "scenario_id": "refrigerator_not_cooling",
+      "title": "Refrigerator not cooling",
+      "prompt": "My refrigerator is not cooling. Help me check this safely and tell me when to stop and call a technician.",
+      "mcp_tools": [
+        "get_troubleshooting_steps"
+      ],
+      "expected_domain_status": "success",
+      "expected_behavior": "Give non-invasive general checks, disclose exact-model documentation is unavailable, and explain stop conditions."
+    },
+    {
+      "scenario_id": "warranty_eligibility",
+      "title": "Warranty eligibility",
+      "prompt": "Can you check whether my washing machine is still under warranty?",
+      "mcp_tools": [
+        "check_warranty"
+      ],
+      "expected_domain_status": "success",
+      "expected_behavior": "Return synthetic eligible warranty record and label it as demo data."
+    },
+    {
+      "scenario_id": "arrange_appliance_service",
+      "title": "Arrange appliance service",
+      "prompt": "What service options are available for my appliance? Do not book anything without asking me first.",
+      "mcp_tools": [
+        "find_service_slots"
+      ],
+      "expected_domain_status": "success",
+      "expected_behavior": "Show estimated synthetic slots; do not create a request or imply booking confirmation."
+    },
+    {
+      "scenario_id": "previous_appliance_issue",
+      "title": "Previous appliance issue",
+      "prompt": "What happened the last time I reported an issue with my refrigerator?",
+      "mcp_tools": [
+        "get_case_status"
+      ],
+      "expected_domain_status": "success",
+      "expected_behavior": "Show the synthetic prior case; resolved does not prove a repair was completed."
+    },
+    {
+      "scenario_id": "unknown_appliance_model",
+      "title": "Unknown appliance model",
+      "prompt": "I need help troubleshooting an appliance, but I don't know its exact model.",
+      "mcp_tools": [
+        "find_product",
+        "get_troubleshooting_steps"
+      ],
+      "expected_domain_status": "not_found_or_model_unverified",
+      "expected_behavior": "Ask for category/brand or safely viewable label details; do not fabricate model matches or citations."
+    }
+  ]
+}

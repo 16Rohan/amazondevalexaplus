@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://homecare-concierge.example/schemas/web-api-events.schema.json",
-  "title": "HomeCare Concierge Web API Streaming Events",
+  "title": "Alexa Web API Streaming Events",
   "description": "Event envelopes for incremental updates to one assistant response. Each event is transport state, not a separate chat message.",
   "type": "object",
   "additionalProperties": false,

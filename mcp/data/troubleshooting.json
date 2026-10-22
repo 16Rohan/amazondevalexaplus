@@ -1,0 +1,352 @@
+{
+  "records": [
+    {
+      "record_id": "trouble-washer-unknown-code",
+      "appliance_type": "washing_machine",
+      "brand": "LG",
+      "model_number": "WM8000-DEMO",
+      "symptom": "error_code_displayed",
+      "error_code": "E21",
+      "exact_model_match": false,
+      "document_found": false,
+      "documented_error_meaning": null,
+      "probable_causes": [],
+      "safe_steps": [
+        "Stop the cycle if the appliance behaves abnormally.",
+        "Switch the appliance off.",
+        "Disconnect power only if safe and accessible without contact with water or damaged equipment.",
+        "Do not remove panels, handle wiring or bypass safety interlocks.",
+        "Check the exact model number and matching manufacturer's manual."
+      ],
+      "requires_technician": true,
+      "source_ids": [
+        "LG_WASHER_ERROR_LIST",
+        "LG_WM8000_MANUAL"
+      ],
+      "source_note": "Sources show codes/actions are model-specific; they do not establish the meaning of E21 for an unidentified washer.",
+      "is_simulated": true
+    },
+    {
+      "record_id": "trouble-fridge-not-cooling",
+      "appliance_type": "refrigerator",
+      "brand": "LG",
+      "model_number": "LFXS26973S-DEMO",
+      "symptom": "not_cooling",
+      "error_code": null,
+      "exact_model_match": true,
+      "document_found": true,
+      "documentation_scope": "general manufacturer guidance, not exact-model diagnosis",
+      "documented_error_meaning": null,
+      "probable_causes": [
+        "Temperature controls may be set incorrectly.",
+        "Internal air vents may be obstructed by food packages.",
+        "Frequent door opening or a large recent load may temporarily affect internal temperature.",
+        "A recently installed appliance (purchased 3 days ago) may need up to 24 hours to stabilize operating temperature."
+      ],
+      "safe_steps": [
+        "Check the temperature setting without opening service panels.",
+        "Check that food packages do not block visible internal air vents.",
+        "Ensure doors close fully and seals are unobstructed.",
+        "For a new installation, allow adequate time between door openings for temperatures to recover.",
+        "If cooling does not recover, arrange qualified service."
+      ],
+      "stop_conditions": [
+        "Smoke, burning smell, sparks, damaged power cord, water near electrical components or an immediate electrical hazard: stop and seek qualified help.",
+        "Do not remove panels, handle refrigerant or work on electrical components."
+      ],
+      "source_ids": [
+        "LG_REFRIGERATOR_GUIDANCE",
+        "LG_SAFETY_MANUAL"
+      ],
+      "source_note": "General manufacturer guidance, not an exact-model diagnosis.",
+      "is_simulated": true
+    },
+    {
+      "record_id": "trouble-dishwasher-drain-cleaning",
+      "appliance_type": "dishwasher",
+      "brand": "Bosch",
+      "model_number": "SHPM65Z55N",
+      "symptom": "not_draining",
+      "error_code": "E24",
+      "exact_model_match": true,
+      "document_found": true,
+      "documentation_scope": "manufacturer troubleshooting guidance",
+      "documented_error_meaning": "Drain filter or waste pump may be blocked or drain hose kinked.",
+      "probable_causes": [
+        "Food debris clogging the coarse/fine cylindrical filter.",
+        "Sink connection or garbage disposal knockout plug restriction.",
+        "Drain hose kinked behind the cabinet."
+      ],
+      "safe_steps": [
+        "Turn off the dishwasher and disconnect power before inspecting.",
+        "Remove lower rack and twist filter counterclockwise to remove.",
+        "Rinse filter assembly under running tap with a soft brush.",
+        "Check for standing water under the filter cover; remove any visible glass or seeds.",
+        "Reinsert and lock the filter before running a short test cycle."
+      ],
+      "stop_conditions": [
+        "Electrical burning smell, scorched cord, or water leaking onto flooring: stop and seek service.",
+        "Never disassemble the pump impeller housing with sharp tools."
+      ],
+      "requires_technician": false,
+      "source_ids": [
+        "BOSCH_DISHWASHER_MANUAL"
+      ],
+      "is_simulated": true
+    },
+    {
+      "record_id": "trouble-dryer-no-heat",
+      "appliance_type": "dryer",
+      "brand": "LG",
+      "model_number": "DLEX4000B",
+      "symptom": "not_heating",
+      "error_code": "d80",
+      "exact_model_match": true,
+      "document_found": true,
+      "documentation_scope": "manufacturer troubleshooting guidance",
+      "documented_error_meaning": "Exhaust duct blockage detected (approx 80% restriction).",
+      "probable_causes": [
+        "Heavy lint accumulation in the lint trap or external vent duct.",
+        "Crushed or kinked flexible exhaust foil behind the unit.",
+        "Outdoor vent hood flapper stuck closed."
+      ],
+      "safe_steps": [
+        "Clean the lint screen thoroughly before every single load.",
+        "Pull dryer forward slightly to inspect rigid exhaust pipe for crushing.",
+        "Verify outdoor exhaust flapper opens freely when air blows out.",
+        "Allow dryer to cool down completely before restarting."
+      ],
+      "stop_conditions": [
+        "Smell of burning lint or smoke: stop immediately, disconnect power/gas, and call for service.",
+        "Do not operate dryer without the lint screen firmly in place."
+      ],
+      "requires_technician": false,
+      "source_ids": [
+        "LG_DRYER_SAFETY"
+      ],
+      "is_simulated": true
+    },
+    {
+      "record_id": "trouble-ac-not-cooling",
+      "appliance_type": "air_conditioner",
+      "brand": "Daikin",
+      "model_number": "FTKM50U",
+      "symptom": "not_cooling",
+      "error_code": null,
+      "exact_model_match": true,
+      "document_found": true,
+      "documentation_scope": "general manufacturer guidance",
+      "documented_error_meaning": null,
+      "probable_causes": [
+        "Air filters dusty and restricting intake airflow.",
+        "Remote control set to Fan or Dry mode instead of Cool mode.",
+        "Direct sunlight on indoor unit or windows open in room.",
+        "Outdoor condenser unit obstructed by leaves or debris."
+      ],
+      "safe_steps": [
+        "Check remote control mode is set to 'Cool' with setpoint lower than room temperature.",
+        "Open front panel, slide out washable mesh filters, rinse under water, and let dry completely.",
+        "Clear any furniture, drapes, or objects blocking the front air louvers.",
+        "Ensure outdoor unit has at least 12 inches of clear clearance around coils."
+      ],
+      "stop_conditions": [
+        "Refrigerant hissing sound, burning electrical smell, or ice buildup on coils: stop and contact HVAC technician.",
+        "Do not spray water directly into electrical control boxes."
+      ],
+      "requires_technician": false,
+      "source_ids": [
+        "DAIKIN_SPLIT_MANUAL"
+      ],
+      "is_simulated": true
+    },
+    {
+      "record_id": "trouble-microwave-no-heat",
+      "appliance_type": "microwave",
+      "brand": "Panasonic",
+      "model_number": "NN-SN966S",
+      "symptom": "not_heating",
+      "error_code": "H97",
+      "exact_model_match": true,
+      "document_found": true,
+      "documentation_scope": "manufacturer troubleshooting guidance",
+      "documented_error_meaning": "Inverter power supply or magnetron circuit issue.",
+      "probable_causes": [
+        "Door interlock switches not fully engaging.",
+        "Power level inadvertently set to 0% or Kitchen Timer mode used.",
+        "High voltage inverter failure."
+      ],
+      "safe_steps": [
+        "Verify the door closes firmly and latches click on both upper and lower catches.",
+        "Check that display shows 'Cook' rather than 'Timer'. Test with 1 cup of water for 30 seconds at 100% power.",
+        "Unplug microwave for 1 minute to reset electronic microprocessor controls."
+      ],
+      "stop_conditions": [
+        "High voltage hazard: NEVER remove outer metal cabinet of microwave oven. Internal capacitor retains lethal voltage even when unplugged.",
+        "Sparks, arcing, or burnt waveguide cover: stop immediately and seek authorized technician."
+      ],
+      "requires_technician": true,
+      "source_ids": [
+        "PANASONIC_MICROWAVE_SAFETY"
+      ],
+      "is_simulated": true
+    },
+    {
+      "record_id": "trouble-oven-uneven-bake",
+      "appliance_type": "oven",
+      "brand": "Bosch",
+      "model_number": "HBL8451UC",
+      "symptom": "uneven_baking",
+      "error_code": null,
+      "exact_model_match": true,
+      "document_found": true,
+      "documentation_scope": "manufacturer troubleshooting guidance",
+      "documented_error_meaning": null,
+      "probable_causes": [
+        "Bake rack placed on incorrect level for recipe.",
+        "Aluminum foil lining oven bottom blocking convection heat flow.",
+        "Door gasket damaged allowing hot air escape."
+      ],
+      "safe_steps": [
+        "Ensure baking pans have at least 1.5 inches of air space between each other and oven walls.",
+        "Remove any aluminum foil or silicone mats from the oven cavity floor.",
+        "Inspect rubber door seal around cavity perimeter for tears or loose corners.",
+        "Preheat fully until oven indicator confirms target temperature."
+      ],
+      "stop_conditions": [
+        "Gas odor, smoke, or error F-codes: shut off oven immediately and call certified technician.",
+        "Do not touch heating elements or attempt to service internal wiring."
+      ],
+      "requires_technician": false,
+      "source_ids": [
+        "BOSCH_OVEN_GUIDANCE"
+      ],
+      "is_simulated": true
+    },
+    {
+      "record_id": "trouble-water-purifier-flow",
+      "appliance_type": "water_purifier",
+      "brand": "Kent",
+      "model_number": "Grand-Plus-RO",
+      "symptom": "low_water_flow",
+      "error_code": null,
+      "exact_model_match": true,
+      "document_found": true,
+      "documentation_scope": "manufacturer guidance",
+      "documented_error_meaning": null,
+      "probable_causes": [
+        "Sediment or carbon pre-filter clogged by particulate matter.",
+        "Inlet water valve turned off or low household water pressure.",
+        "Storage tank air bladder pressure low."
+      ],
+      "safe_steps": [
+        "Check that cold water supply angle valve to purifier is fully open.",
+        "Verify inlet tube is not bent or pinched.",
+        "Check pre-filter bowl for visible silt or sediment discoloration.",
+        "If filters have been in use for over 12 months, schedule replacement."
+      ],
+      "stop_conditions": [
+        "Electrical shock risk: unplug from wall outlet immediately if water drips near power adapter.",
+        "Do not operate without genuine certified filtration cartridges."
+      ],
+      "requires_technician": false,
+      "source_ids": [
+        "KENT_RO_GUIDANCE"
+      ],
+      "is_simulated": true
+    },
+    {
+      "record_id": "trouble-vacuum-no-suction",
+      "appliance_type": "vacuum_cleaner",
+      "brand": "Dyson",
+      "model_number": "V15-Detect",
+      "symptom": "loss_of_suction",
+      "error_code": null,
+      "exact_model_match": true,
+      "document_found": true,
+      "documentation_scope": "manufacturer troubleshooting guidance",
+      "documented_error_meaning": null,
+      "probable_causes": [
+        "Dust bin filled past MAX line.",
+        "Washable HEPA filter clogged with fine gypsum or carpet powder.",
+        "Blockage in cleaner head neck, wand tube, or bin inlet."
+      ],
+      "safe_steps": [
+        "Empty clear dust bin into trash can when debris reaches MAX marker.",
+        "Unclick wand and look through tube against a light to spot clogs.",
+        "Twist off rear filter, wash in cold running water without detergent, and air-dry for at least 24 hours.",
+        "Remove brush roll end cap and cut away tangled hairs."
+      ],
+      "stop_conditions": [
+        "Do not vacuum liquids or damp carpets with dry-only vacuum cleaner.",
+        "Never use vacuum without completely dry filter installed."
+      ],
+      "requires_technician": false,
+      "source_ids": [
+        "DYSON_V15_USER_GUIDE"
+      ],
+      "is_simulated": true
+    },
+    {
+      "record_id": "trouble-water-heater-no-hot-water",
+      "appliance_type": "water_heater",
+      "brand": "Rheem",
+      "model_number": "Performance-50",
+      "symptom": "no_hot_water",
+      "error_code": null,
+      "exact_model_match": true,
+      "document_found": true,
+      "documentation_scope": "general manufacturer guidance",
+      "documented_error_meaning": null,
+      "probable_causes": [
+        "Circuit breaker for water heater tripped in main electrical panel.",
+        "High-limit safety switch (red reset button) tripped on upper thermostat.",
+        "Recent heavy hot water demand (multiple showers, laundry) depleted tank."
+      ],
+      "safe_steps": [
+        "Check main home breaker panel to confirm 240V double-pole breaker has not tripped.",
+        "Wait 30-45 minutes after heavy usage for tank recovery.",
+        "Check temperature dial setting (120\u00b0F / 49\u00b0C recommended for safety and scald prevention)."
+      ],
+      "stop_conditions": [
+        "Scald and electrocution hazard: do NOT remove thermostat covers while power is connected.",
+        "Active water leaking from tank body or pressure relief valve: turn off power and main water valve and call licensed plumber."
+      ],
+      "requires_technician": true,
+      "source_ids": [
+        "RHEEM_WATER_HEATER_SAFETY"
+      ],
+      "is_simulated": true
+    },
+    {
+      "record_id": "trouble-tv-no-picture",
+      "appliance_type": "television",
+      "brand": "Sony",
+      "model_number": "XR-65A80L",
+      "symptom": "no_picture_sound_ok",
+      "error_code": null,
+      "exact_model_match": true,
+      "document_found": true,
+      "documentation_scope": "manufacturer troubleshooting guidance",
+      "documented_error_meaning": null,
+      "probable_causes": [
+        "Input source set to wrong HDMI port.",
+        "HDMI cable loose or damaged between cable box/console and TV.",
+        "Display panel power saver / screen off mode engaged."
+      ],
+      "safe_steps": [
+        "Press 'Input' or 'Source' button on remote to toggle through HDMI 1, 2, 3, 4.",
+        "Reseat HDMI cables firmly at both ends.",
+        "Perform soft reset: unplug TV power cord from wall outlet, wait 60 seconds, press power button on TV for 10 seconds, then plug back in."
+      ],
+      "stop_conditions": [
+        "Cracked glass, blinking red standby LED (error code), or smoke: unplug immediately and contact authorized service.",
+        "Never open TV back casing; high voltage components inside."
+      ],
+      "requires_technician": false,
+      "source_ids": [
+        "SONY_BRAVIA_GUIDANCE"
+      ],
+      "is_simulated": true
+    }
+  ]
+}

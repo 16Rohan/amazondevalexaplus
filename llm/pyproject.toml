@@ -1,7 +1,10 @@
 [project]
 name = "llm"
 version = "0.1.0"
-description = "Add your description here"
+description = "Alexa conversational assistant and appliance support gateway"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = ["mcp[cli]==2.0.0"]
+
+[project.scripts]
+llm-gateway = "llm.main:main"

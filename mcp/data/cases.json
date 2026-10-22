@@ -1,0 +1,15 @@
+{
+  "records": [
+    {
+      "request_id": "demo-case-2026-0042",
+      "appliance_id": "demo-appl-fridge-001",
+      "issue_summary": "Refrigerator temperature rose after frequent door opening during a large grocery load.",
+      "request_status": "resolved",
+      "booking_status": "not_booked",
+      "last_updated": "2026-08-12T15:30:00+05:30",
+      "summary": "Prior synthetic demo case. Resolved status is not proof that a physical repair occurred.",
+      "evidence_source": "simulated_record",
+      "is_simulated": true
+    }
+  ]
+}

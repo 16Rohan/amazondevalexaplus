@@ -1,0 +1,52 @@
+{
+  "dataset_version": "1.0.0",
+  "created_date": "2026-10-22",
+  "provenance_policy": {
+    "claim": "Selected facts reviewed and paraphrased from official manufacturer sources; this package does not assert that full manuals were scraped.",
+    "synthetic_data": "All appliance ownership, warranty, case-history, provider, slot and fee records are fictional demo data.",
+    "citation_rule": "Do not make model-specific claims unless the exact model and source support them."
+  },
+  "sources": [
+    {
+      "source_id": "LG_WM8000_MANUAL",
+      "manufacturer": "LG",
+      "title": "WM8000 Owner's Manual",
+      "url": "https://www.lg.com/us/support/products/documents/WM8000%20Manual.pdf",
+      "facts_used": [
+        "The manual lists model-specific washer error messages and corrective actions.",
+        "It does not establish the meaning of E21 for an unidentified washer."
+      ],
+      "extraction_status": "Selected indexed official-manual facts reviewed; full PDF ingestion not asserted."
+    },
+    {
+      "source_id": "LG_WASHER_ERROR_LIST",
+      "manufacturer": "LG",
+      "title": "LG Washer Error Code List",
+      "url": "https://www.lg.com/us/support/help-library/lg-washer-error-code-list-CT10000010-20150140270078",
+      "facts_used": [
+        "Error codes vary by product model; model-specific documentation is needed."
+      ],
+      "extraction_status": "Official support page reviewed."
+    },
+    {
+      "source_id": "WHIRLPOOL_NOT_COOLING",
+      "manufacturer": "Whirlpool",
+      "title": "Not Cooling - Product Help",
+      "url": "https://producthelp.whirlpool.com/Refrigeration/Full-Size_Refrigerators/All_Refrigerator/Operation/Temperature_Concerns/Not_Cooling",
+      "facts_used": [
+        "Check controls, visible internal air vents, door-opening patterns and recent installation/load conditions; contact service if unresolved."
+      ],
+      "extraction_status": "Official support page reviewed."
+    },
+    {
+      "source_id": "WHIRLPOOL_COLUMN_MANUAL",
+      "manufacturer": "Whirlpool family / JennAir-branded column refrigeration guide",
+      "title": "Use and Care Guide: Column Refrigeration, W11362247A",
+      "url": "https://www.whirlpool.com/content/dam/global/documents/202202/use-and-care-w11362247-reva.pdf",
+      "facts_used": [
+        "Keep ventilation openings clear; do not damage refrigerant circuit; damaged power cords require qualified service; model/serial are on product rating plate."
+      ],
+      "extraction_status": "Official manual reviewed; not claimed as the exact manual for every refrigerator."
+    }
+  ]
+}
